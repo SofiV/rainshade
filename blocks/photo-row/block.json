@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rainshade/photo-row",
+	"title": "Photo row",
+	"category": "media",
+	"icon": "format-gallery",
+	"description": "Section: a row of photos with captions. Rain starts on hover.",
+	"textdomain": "rainshade",
+	"attributes": {
+		"images": { "type": "array", "default": [] },
+		"columns": { "type": "number", "default": 3 },
+		"ratio": { "type": "string", "default": "4/5" }
+	},
+	"supports": { "html": false, "anchor": true, "align": [ "wide", "full" ] },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

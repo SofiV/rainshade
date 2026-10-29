@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rainshade/shows",
+	"title": "Live",
+	"category": "text",
+	"icon": "calendar-alt",
+	"description": "Section: live dates. Past dates hide themselves.",
+	"textdomain": "rainshade",
+	"attributes": {
+		"heading": { "type": "string", "default": "live" },
+		"emptyText": { "type": "string", "default": "new dates soon" }
+	},
+	"supports": { "html": false, "anchor": true, "align": [ "wide", "full" ] },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

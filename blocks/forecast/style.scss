@@ -1,0 +1,19 @@
+.rs-forecast__head {
+	display: flex; justify-content: space-between; gap: 16px;
+	padding-bottom: 10px;
+	color: var(--wp--preset--color--muted);
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 14%, transparent);
+}
+.rs-forecast__list { margin: 0; padding: 0; list-style: none; counter-reset: rs-track; }
+.rs-track {
+	counter-increment: rs-track;
+	display: flex; align-items: center; gap: 18px;
+	padding: 11px 0;
+	border-bottom: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 10%, transparent);
+	transition: color .3s;
+}
+.rs-track:hover { color: var(--wp--preset--color--accent); }
+.rs-track::before { content: counter(rs-track, decimal-leading-zero); color: var(--wp--preset--color--muted); }
+.rs-track__title { flex: 1 1 auto; }
+.rs-track__bpm { color: var(--wp--preset--color--muted); }
+.rs-track__tears { width: 48px; text-align: right; }

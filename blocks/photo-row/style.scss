@@ -1,0 +1,27 @@
+.rs-photos {
+	display: grid;
+	grid-template-columns: repeat(var(--rs-cols, 3), minmax(0, 1fr));
+	gap: 24px;
+	padding-block: 24px var(--wp--preset--spacing--60);
+}
+
+.rs-photos__item {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+
+	img {
+		width: 100%;
+		aspect-ratio: var(--rs-ratio, 4/5);
+		object-fit: cover;
+		border-radius: 2px;
+	}
+
+	// keep the rain over the photo only, not the caption
+	.rs-rainon { bottom: auto; aspect-ratio: var(--rs-ratio, 4/5); }
+}
+
+@media (max-width: 760px) {
+	.rs-photos { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rainshade/fog-quote",
+	"title": "Words on fogged glass",
+	"category": "media",
+	"icon": "format-quote",
+	"description": "A short line written through fogged glass over a photo. Hover clears the glass.",
+	"textdomain": "rainshade",
+	"attributes": {
+		"mediaId": { "type": "number" },
+		"mediaUrl": { "type": "string", "default": "" },
+		"focalPoint": { "type": "object", "default": { "x": 0.45, "y": 0.4 } },
+		"text": { "type": "string", "default": "dance music\nfor sad people" }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ] },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"viewScript": "rainshade-water",
+	"render": "file:./render.php"
+}

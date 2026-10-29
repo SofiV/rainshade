@@ -1,0 +1,114 @@
+// Global bits. Colors and fonts come from theme.json presets, so Styles in the admin drives them.
+
+a { text-decoration-thickness: 1px; text-underline-offset: 5px; }
+::selection { background: var(--wp--preset--color--accent); color: var(--wp--preset--color--base); }
+
+.rs-menu {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px 28px;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Header (template-parts/header.php)
+.rs-header {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 12px 24px;
+	padding: 24px var(--wp--preset--spacing--40);
+}
+
+.rs-header__name { text-decoration: none; }
+
+// Header floats over the window when a page starts with one
+body:has(main > .rs-window:first-child, main .entry-content > .rs-window:first-child) .rs-header {
+	position: absolute;
+	inset: 0 0 auto;
+	z-index: 5;
+}
+
+// Footer (template-parts/footer.php)
+.rs-footer {
+	display: flex;
+	flex-direction: column;
+	gap: 48px;
+	max-width: 1344px;
+	margin-inline: auto;
+	padding: var(--wp--preset--spacing--50) var(--wp--preset--spacing--40) 32px;
+	border-top: 1px solid color-mix(in srgb, var(--wp--preset--color--contrast) 12%, transparent);
+}
+
+.rs-footer__top {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 32px;
+}
+
+.rs-footer__signup {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	gap: 12px 20px;
+	margin: 0;
+
+	span {
+		font-family: var(--wp--preset--font-family--serif);
+		font-size: 28px;
+		text-transform: none;
+	}
+}
+
+.rs-footer__bottom {
+	display: flex;
+	justify-content: space-between;
+	gap: 16px;
+	color: var(--wp--preset--color--muted);
+	font-size: var(--wp--preset--font-size--x-small);
+
+	a { color: inherit; }
+}
+
+// Regular pages, post list, 404 (page.php, index.php, 404.php)
+.rs-page {
+	--wp--style--global--content-size: 880px;
+	padding-block: var(--wp--preset--spacing--50) var(--wp--preset--spacing--60);
+}
+
+.rs-page__title,
+.rs-post__title {
+	margin: 0 0 24px;
+	font-family: var(--wp--preset--font-family--serif);
+	font-size: var(--wp--preset--font-size--x-large);
+	font-weight: 400;
+	text-transform: none;
+}
+
+.rs-post { padding-block: 24px; }
+.rs-post__date { color: var(--wp--preset--color--muted); }
+
+.rs-404__code {
+	margin: 0;
+	font-family: var(--wp--preset--font-family--display);
+	font-size: var(--wp--preset--font-size--huge);
+	letter-spacing: -.06em;
+}
+
+.rs-404__text {
+	font-family: var(--wp--preset--font-family--serif);
+	font-size: var(--wp--preset--font-size--large);
+	text-transform: none;
+}
+
+// Rows that light up
+.rs-row {
+	transition: color .3s;
+	&:hover { color: var(--wp--preset--color--accent); }
+}
+
+.screen-reader-text { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }

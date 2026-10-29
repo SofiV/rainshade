@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rainshade/show",
+	"title": "Show",
+	"category": "text",
+	"icon": "tickets-alt",
+	"parent": [ "rainshade/shows" ],
+	"textdomain": "rainshade",
+	"attributes": {
+		"date": { "type": "string", "default": "" },
+		"city": { "type": "string", "default": "" },
+		"venue": { "type": "string", "default": "" },
+		"url": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "reusable": false },
+	"editorScript": "file:./editor.js",
+	"render": "file:./render.php"
+}

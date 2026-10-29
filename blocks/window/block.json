@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "rainshade/window",
+	"title": "Fogged window",
+	"category": "media",
+	"icon": "cloud",
+	"description": "Full-width photo behind fogged glass. Visitors wipe the glass with the cursor or a finger.",
+	"textdomain": "rainshade",
+	"attributes": {
+		"mediaId": { "type": "number" },
+		"mediaUrl": { "type": "string", "default": "" },
+		"focalPoint": { "type": "object", "default": { "x": 0.5, "y": 0.4 } },
+		"eyebrow": { "type": "string", "default": "debut album · out 30.10.2026" },
+		"release": { "type": "string", "default": "fall" },
+		"linkUrl": { "type": "string", "default": "https://linktr.ee/rainshade" },
+		"linkText": { "type": "string", "default": "listen ↗" },
+		"hint": { "type": "string", "default": "wipe the glass" },
+		"height": { "type": "number", "default": 880 }
+	},
+	"supports": { "html": false, "align": [ "full" ] },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"viewScript": "rainshade-water",
+	"render": "file:./render.php"
+}

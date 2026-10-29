@@ -1,0 +1,40 @@
+.rs-fogquote {
+	position: relative;
+	overflow: hidden;
+	aspect-ratio: 21 / 9;
+	min-height: 320px;
+	margin: 0;
+	border-radius: 2px;
+	background: var(--wp--preset--color--surface);
+}
+.rs-fogquote__photo,
+.rs-fogquote__glass,
+.rs-fogquote__glass > img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.rs-fogquote__photo { object-fit: cover; object-position: var(--rs-pos); }
+.rs-fogquote__glass { overflow: hidden; transition: opacity 1.6s cubic-bezier(.2,.7,.2,1); }
+.rs-fogquote__glass > img {
+	inset: -40px; width: calc(100% + 80px); height: calc(100% + 80px);
+	object-fit: cover; object-position: var(--rs-pos);
+	filter: blur(20px) saturate(.7) brightness(1.1);
+}
+.rs-fogquote__glass::after { content: ""; position: absolute; inset: 0; background: rgba(190,200,215,.16); }
+.rs-fogquote__glass .rs-water { z-index: 1; }
+.rs-fogquote:hover .rs-fogquote__glass,
+.rs-fogquote:focus-visible .rs-fogquote__glass { opacity: 0; }
+
+.rs-fogquote__text {
+	position: absolute; inset: 0; margin: 0; padding: 0; border: 0;
+	display: flex; align-items: center; justify-content: center; text-align: center;
+	font-family: var(--wp--preset--font-family--serif);
+	font-style: italic;
+	font-size: clamp(44px, 8vw, 128px);
+	line-height: .95;
+	text-transform: none;
+	background-size: cover;
+	background-position: var(--rs-pos);
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	-webkit-text-fill-color: transparent;
+	filter: drop-shadow(0 0 1px rgba(255,255,255,.5));
+}

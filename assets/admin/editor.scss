@@ -1,12 +1,19 @@
 // Block editor styles. Compiled by gulp into editor.css.
 
-@use '../scss/base';
-@use '../scss/rain';
-@use '../scss/water';
+@use "../scss/base";
+@use "../scss/rain";
+@use "../scss/water";
 
-// Placeholder for blocks without a photo yet
-.rs-placeholder {
-	padding: 48px 24px;
-	border: 1px dashed var(--wp--preset--color--muted);
-	color: var(--wp--preset--color--muted);
+// Button inside an empty frame
+.rs-pick {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.rs-pick .rs-frame {
+  position: absolute;
+  inset: 0;
 }

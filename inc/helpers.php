@@ -14,10 +14,13 @@ function rainshade_ver( string $file ): string {
 }
 
 /**
- * Photo URL for a block: the picked one, or the theme's default photo.
+ * Photo URL for a block: the picked one, else the theme's default photo if given, else ''.
  */
-function rainshade_image( array $attributes, string $fallback ): string {
-	return ! empty( $attributes['mediaUrl'] ) ? $attributes['mediaUrl'] : get_theme_file_uri( 'assets/images/' . $fallback );
+function rainshade_image( array $attributes, string $fallback = '' ): string {
+	if ( ! empty( $attributes['mediaUrl'] ) ) {
+		return $attributes['mediaUrl'];
+	}
+	return $fallback ? get_theme_file_uri( 'assets/images/' . $fallback ) : '';
 }
 
 /**

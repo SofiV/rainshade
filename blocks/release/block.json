@@ -10,10 +10,10 @@
 	"attributes": {
 		"mediaId": { "type": "number" },
 		"mediaUrl": { "type": "string", "default": "" },
-		"eyebrow": { "type": "string", "default": "debut album · 30.10.2026" },
-		"title": { "type": "string", "default": "fall" },
-		"linkUrl": { "type": "string", "default": "https://linktr.ee/rainshade" },
-		"linkText": { "type": "string", "default": "listen everywhere ↗" }
+		"eyebrow": { "type": "string", "default": "" },
+		"title": { "type": "string", "default": "" },
+		"linkUrl": { "type": "string", "default": "" },
+		"linkText": { "type": "string", "default": "" }
 	},
 	"supports": { "html": false, "anchor": true, "align": [ "wide", "full" ] },
 	"editorScript": "file:./editor.js",

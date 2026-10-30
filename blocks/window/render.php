@@ -13,6 +13,9 @@ $fy    = round( ( $attributes['focalPoint']['y'] ?? 0.4 ) * 100, 2 );
 $pos   = "{$fx}% {$fy}%";
 $name  = get_bloginfo( 'name' );
 $alt   = rainshade_alt( $attributes );
+$link  = $attributes['linkUrl'];
+$tag   = $link ? 'a' : 'span';
+$href  = $link ? sprintf( ' href="%s" target="_blank" rel="noopener"', esc_url( $link ) ) : '';
 $style = sprintf( 'height:%dpx;--rs-pos:%s;', (int) $attributes['height'], $pos );
 
 $wrapper = get_block_wrapper_attributes( [
@@ -37,10 +40,16 @@ $wrapper = get_block_wrapper_attributes( [
 			<?php if ( $attributes['eyebrow'] ) : ?>
 				<span class="rs-window__eyebrow"><?php echo esc_html( $attributes['eyebrow'] ); ?></span>
 			<?php endif; ?>
-			<a href="<?php echo esc_url( $attributes['linkUrl'] ); ?>" target="_blank" rel="noopener">
-				<span class="rs-window__title"><?php echo esc_html( $attributes['release'] ); ?><i>.</i></span>
-				<span class="rs-window__link"><?php echo esc_html( $attributes['linkText'] ); ?></span>
-			</a>
+			<?php if ( $attributes['release'] || $attributes['linkText'] ) : ?>
+				<<?php echo $tag . $href; ?> class="rs-window__cta">
+					<?php if ( $attributes['release'] ) : ?>
+						<span class="rs-window__title"><?php echo esc_html( $attributes['release'] ); ?><i>.</i></span>
+					<?php endif; ?>
+					<?php if ( $attributes['linkText'] ) : ?>
+						<span class="rs-window__link"><?php echo esc_html( $attributes['linkText'] ); ?></span>
+					<?php endif; ?>
+				</<?php echo $tag; ?>>
+			<?php endif; ?>
 		</div>
 		<?php if ( $attributes['hint'] ) : ?>
 			<span class="rs-window__hint">

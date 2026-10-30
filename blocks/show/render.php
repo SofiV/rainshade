@@ -24,6 +24,6 @@ $place = implode( ' — ', array_filter( [ $attributes['city'], $attributes['ven
 	<time class="rs-show__date" datetime="<?php echo esc_attr( $date ); ?>"><?php echo esc_html( wp_date( 'd.m', strtotime( $date ) ) ); ?></time>
 	<span class="rs-show__place"><?php echo esc_html( $place ); ?></span>
 	<?php if ( $attributes['url'] ) : ?>
-		<span class="rs-show__cta">tickets ↗</span>
+		<span class="rs-show__cta">tickets</span>
 	<?php endif; ?>
 </<?php echo $tag; ?>>

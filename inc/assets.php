@@ -10,6 +10,7 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 add_action( 'init', function () {
+	// assets/js/_*.js → scripts.min.js: fogged glass + water drops. Loaded by the window and fog-quote blocks only.
 	wp_register_script(
 		'rainshade-water',
 		get_theme_file_uri( 'assets/js/scripts.min.js' ),
@@ -19,11 +20,11 @@ add_action( 'init', function () {
 	);
 } );
 
-// Default photos for editor previews of blocks without a picked photo.
+// Editor data: default photos for previews, Apple Music icon for Social Icons.
 add_action( 'enqueue_block_editor_assets', function () {
 	wp_add_inline_script(
 		'wp-blocks',
-		'window.rainshadeTheme = ' . wp_json_encode( [ 'images' => get_theme_file_uri( 'assets/images/' ) ] ) . ';',
+		'window.rainshadeTheme = ' . wp_json_encode( [ 'images' => get_theme_file_uri( 'assets/images/' ), 'appleMusic' => RAINSHADE_APPLE_MUSIC ] ) . ';',
 		'before'
 	);
 } );

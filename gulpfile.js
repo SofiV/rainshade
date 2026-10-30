@@ -11,7 +11,7 @@ const concat = require('gulp-concat');
 const browserSync = require('browser-sync').create();
 
 // gulp-sass 5 uses the legacy Sass API; keep the console quiet about it.
-const sassOptions = { outputStyle: 'compressed', silenceDeprecations: ['legacy-js-api'] };
+const sassOptions = { outputStyle: 'compressed', charset: false, silenceDeprecations: ['legacy-js-api'] };
 
 const paths = {
     style: ['./assets/scss/style.scss'],

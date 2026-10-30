@@ -1,43 +1,69 @@
 // Falling rain streaks (markup: rainshade_streaks() in functions.php)
 
 @keyframes rs-fall {
-	from { transform: translateY(-200px); }
-	to { transform: translateY(1000px); }
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(1000px);
+  }
 }
 
 .rs-streaks {
-	position: absolute;
-	inset: 0;
-	pointer-events: none;
-	overflow: hidden;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
 
-	span {
-		position: absolute;
-		top: 0;
-		left: var(--x);
-		width: 1px;
-		height: var(--h);
-		opacity: var(--o);
-		background: linear-gradient(to bottom, transparent, color-mix(in srgb, var(--wp--preset--color--contrast) 55%, transparent));
-		animation: rs-fall var(--d) linear var(--t) infinite;
-	}
+  span {
+    position: absolute;
+    top: 0;
+    left: var(--x);
+    width: 1px;
+    height: var(--h);
+    opacity: var(--o);
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      color-mix(in srgb, var(--wp--preset--color--contrast) 55%, transparent)
+    );
+    animation: rs-fall var(--d) linear var(--t) infinite;
+  }
 }
 
 // Image block style: Rain on hover
 .wp-block-image.is-style-rain {
-	position: relative;
-	overflow: hidden;
+  position: relative;
+  overflow: hidden;
 
-	img { display: block; transition: transform 1.4s cubic-bezier(.2, .7, .2, 1), filter 1.4s; }
-	.rs-rainon { opacity: 0; transition: opacity .8s; }
-	figcaption { color: var(--wp--preset--color--muted); font-size: var(--wp--preset--font-size--x-small); }
+  img {
+    display: block;
+    transition:
+      transform 1.4s cubic-bezier(0.2, 0.7, 0.2, 1),
+      filter 1.4s;
+  }
+  .rs-rainon {
+    opacity: 0;
+    transition: opacity 0.8s;
+  }
+  figcaption {
+    color: var(--wp--preset--color--muted);
+    font-size: var(--wp--preset--font-size--x-small);
+  }
 
-	&:hover {
-		img { transform: scale(1.04); filter: brightness(.85); }
-		.rs-rainon { opacity: 1; }
-	}
+  &:hover {
+    img {
+      transform: scale(1.04);
+      filter: brightness(0.85);
+    }
+    .rs-rainon {
+      opacity: 1;
+    }
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.rs-streaks span { animation: none; }
+  .rs-streaks span {
+    animation: none;
+  }
 }

@@ -6,8 +6,8 @@
 	const { useSelect } = wp.data;
 	const { __ } = wp.i18n;
 
-	const text = ( a, set, key, className, tagName ) => el( RichText, {
-		tagName: tagName || 'span', className, value: a[ key ], allowedFormats: [], onChange: ( v ) => set( { [ key ]: v } ),
+	const text = ( a, set, key, className, placeholder, tagName ) => el( RichText, {
+		tagName: tagName || 'span', className, placeholder, value: a[ key ], allowedFormats: [], onChange: ( v ) => set( { [ key ]: v } ),
 	} );
 
 	registerBlockType( 'rainshade/window', {
@@ -38,13 +38,13 @@
 					el( 'div', { className: 'rs-window__name' }, el( 'span', { style: { backgroundImage: `url(${ url })` } }, name ) ),
 					el( 'div', { className: 'rs-window__bar' },
 						el( 'div', { className: 'rs-window__release' },
-							text( a, set, 'eyebrow', 'rs-window__eyebrow' ),
-							el( 'span', { style: { display: 'inline-flex', alignItems: 'baseline', gap: '16px' } },
-								text( a, set, 'release', 'rs-window__title' ),
-								text( a, set, 'linkText', 'rs-window__link' )
+							text( a, set, 'eyebrow', 'rs-window__eyebrow', __( 'e.g. debut album · out 30.10', 'rainshade' ) ),
+							el( 'span', { className: 'rs-window__cta' },
+								text( a, set, 'release', 'rs-window__title', __( 'release title', 'rainshade' ) ),
+								text( a, set, 'linkText', 'rs-window__link', __( 'link text', 'rainshade' ) )
 							)
 						),
-						text( a, set, 'hint', 'rs-window__hint' )
+						text( a, set, 'hint', 'rs-window__hint', __( 'hint', 'rainshade' ) )
 					)
 				)
 			);

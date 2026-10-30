@@ -7,7 +7,7 @@
 
 	registerBlockType( 'rainshade/fog-quote', {
 		edit( { attributes: a, setAttributes: set } ) {
-			const url = a.mediaUrl || window.rainshadeTheme.images + 'blossom-eye.jpg';
+			const url = a.mediaUrl;
 			const pos = `${ a.focalPoint.x * 100 }% ${ a.focalPoint.y * 100 }%`;
 
 			return el( Fragment, null,
@@ -18,17 +18,17 @@
 								allowedTypes: [ 'image' ],
 								value: a.mediaId,
 								onSelect: ( m ) => set( { mediaId: m.id, mediaUrl: m.url } ),
-								render: ( { open } ) => el( Button, { variant: 'secondary', onClick: open }, __( 'Replace photo', 'rainshade' ) ),
+								render: ( { open } ) => el( Button, { variant: 'secondary', onClick: open }, url ? __( 'Replace photo', 'rainshade' ) : __( 'Choose photo', 'rainshade' ) ),
 							} )
 						),
-						el( FocalPointPicker, { label: __( 'Focal point', 'rainshade' ), url, value: a.focalPoint, onChange: ( v ) => set( { focalPoint: v } ) } ),
+						url && el( FocalPointPicker, { label: __( 'Focal point', 'rainshade' ), url, value: a.focalPoint, onChange: ( v ) => set( { focalPoint: v } ) } ),
 						el( TextareaControl, { label: __( 'Words on the glass', 'rainshade' ), help: __( 'New line = line break.', 'rainshade' ), value: a.text, onChange: ( v ) => set( { text: v } ), __nextHasNoMarginBottom: true } )
 					)
 				),
-				el( 'figure', useBlockProps( { className: 'rs-fogquote', style: { '--rs-pos': pos } } ),
-					el( 'img', { className: 'rs-fogquote__photo', src: url, alt: '' } ),
-					el( 'div', { className: 'rs-fogquote__glass' }, el( 'img', { src: url, alt: '' } ) ),
-					el( 'blockquote', { className: 'rs-fogquote__text', style: { backgroundImage: `url(${ url })`, whiteSpace: 'pre-line' } }, a.text )
+				el( 'figure', useBlockProps( { className: 'rs-fogquote' + ( url ? '' : ' is-empty' ), style: { '--rs-pos': pos } } ),
+					url && el( 'img', { className: 'rs-fogquote__photo', src: url, alt: '' } ),
+					url && el( 'div', { className: 'rs-fogquote__glass' }, el( 'img', { src: url, alt: '' } ) ),
+					el( 'blockquote', { className: 'rs-fogquote__text', style: { backgroundImage: url ? `url(${ url })` : 'none', whiteSpace: 'pre-line' } }, a.text || __( 'Add words in the sidebar →', 'rainshade' ) )
 				)
 			);
 		},

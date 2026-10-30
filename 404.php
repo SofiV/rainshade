@@ -11,7 +11,7 @@ get_header();
 	<h1 class="rs-404__code">404</h1>
 	<p class="rs-404__text">
 		<?php esc_html_e( 'this page was washed away by the rain.', 'rainshade' ); ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'back to the window ↑', 'rainshade' ); ?></a>
+		<a class="rs-404__back-btn" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'back to the window ↑', 'rainshade' ); ?></a>
 	</p>
 </div>
 <?php

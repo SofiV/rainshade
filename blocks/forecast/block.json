@@ -8,7 +8,7 @@
 	"description": "Tracklist as a weather forecast: bpm and chance of tears.",
 	"textdomain": "rainshade",
 	"attributes": {
-		"headLeft": { "type": "string", "default": "forecast for fall" },
+		"headLeft": { "type": "string", "default": "" },
 		"headRight": { "type": "string", "default": "chance of tears" }
 	},
 	"supports": { "html": false },

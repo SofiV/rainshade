@@ -11,7 +11,7 @@
 		"mediaId": { "type": "number" },
 		"mediaUrl": { "type": "string", "default": "" },
 		"focalPoint": { "type": "object", "default": { "x": 0.45, "y": 0.4 } },
-		"text": { "type": "string", "default": "dance music\nfor sad people" }
+		"text": { "type": "string", "default": "" }
 	},
 	"supports": { "html": false, "align": [ "wide", "full" ] },
 	"editorScript": "file:./editor.js",

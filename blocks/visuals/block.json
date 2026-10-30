@@ -5,13 +5,13 @@
 	"title": "Visuals",
 	"category": "media",
 	"icon": "video-alt3",
-	"description": "Section: heading and a Vimeo/YouTube embed. No video files on the server.",
+	"description": "Section: heading and a video — YouTube/Vimeo embed or a media library file (optional).",
 	"textdomain": "rainshade",
 	"attributes": {
 		"heading": { "type": "string", "default": "visuals" },
-		"note": { "type": "string", "default": "sound & image — both by rainshade" },
-		"linkUrl": { "type": "string", "default": "https://www.youtube.com/@rainshade_music" },
-		"linkText": { "type": "string", "default": "watch on youtube ↗" }
+		"note": { "type": "string", "default": "" },
+		"linkUrl": { "type": "string", "default": "" },
+		"linkText": { "type": "string", "default": "" }
 	},
 	"supports": { "html": false, "anchor": true, "align": [ "wide", "full" ] },
 	"editorScript": "file:./editor.js",

@@ -1,6 +1,6 @@
 <?php
 /**
- * Site footer. Menu: Appearance → Menus → "Footer" (nothing shows until one is assigned).
+ * Site footer. Menu: Appearance → Menus → "Footer".
  */
 
 defined( 'ABSPATH' ) || exit;

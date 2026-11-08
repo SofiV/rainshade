@@ -10,27 +10,27 @@
 			"palette": [
 				{
 					"slug": "base",
-					"name": "Night",
+					"name": "Background",
 					"color": "#08090C"
 				},
 				{
 					"slug": "surface",
-					"name": "Wet asphalt",
+					"name": "Surface",
 					"color": "#11141A"
 				},
 				{
 					"slug": "contrast",
-					"name": "Mist",
+					"name": "Text",
 					"color": "#ECEEF0"
 				},
 				{
 					"slug": "muted",
-					"name": "Fog",
+					"name": "Muted text",
 					"color": "#9097A1"
 				},
 				{
 					"slug": "accent",
-					"name": "Blossom",
+					"name": "Accent",
 					"color": "#F4A9C4"
 				}
 			]

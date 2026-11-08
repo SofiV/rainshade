@@ -63,17 +63,26 @@ body:has(
 .wp-block-social-links {
   gap: 12px 24px;
   margin: 0;
-}
-.wp-block-social-links li.wp-social-link.wp-block-social-link {
-  background: none;
-  color: inherit;
-  transition: color 0.3s;
 
-  &:hover {
-    color: var(--wp--preset--color--accent);
-    transform: none;
+  li.wp-social-link.wp-block-social-link {
+    background: none;
+    color: inherit;
+    transition: color 0.3s;
+
+    &:hover {
+      color: var(--wp--preset--color--accent);
+      transform: none;
+    }
   }
 }
+
+.wp-social-link-applemusic,
+.wp-social-link-tiktok {
+	svg {
+		transform: scale(0.85);
+	}
+}
+
 .wp-block-social-link-label {
   font-family: var(--wp--preset--font-family--mono);
   text-transform: lowercase;
@@ -109,6 +118,11 @@ body:has(
       font-family: var(--wp--preset--font-family--serif);
       font-size: 28px;
       text-transform: none;
+    }
+
+    a {
+      position: relative;
+      top: -5px;
     }
   }
 

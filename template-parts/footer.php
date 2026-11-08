@@ -5,15 +5,18 @@
 
 defined( 'ABSPATH' ) || exit;
 ?>
+
 <div class="rs-footer">
 	<div class="rs-footer__top">
 		<?php $signup = get_theme_mod( 'rainshade_signup_url' ); // Appearance → Customize → Footer ?>
+		
 		<?php if ( $signup ) : ?>
 			<p class="rs-footer__signup">
 				<span><?php echo esc_html( get_theme_mod( 'rainshade_signup_text', 'tell me when it rains again:' ) ); ?></span>
-				<a href="<?php echo esc_url( $signup ); ?>" target="_blank" rel="noopener"><?php echo esc_html( get_theme_mod( 'rainshade_signup_link', 'sign up' ) ); ?></a>
+				<a href="<?php echo esc_url( $signup ); ?>"<?php echo str_starts_with( $signup, 'mailto:' ) ? '' : ' target="_blank" rel="noopener"'; ?>><?php echo esc_html( get_theme_mod( 'rainshade_signup_link', 'sign up' ) ); ?></a>
 			</p>
 		<?php endif; ?>
+
 		<?php
 		wp_nav_menu( [
 			'theme_location'  => 'footer',
